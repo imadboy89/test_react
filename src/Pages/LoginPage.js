@@ -33,17 +33,17 @@ class LoginForm extends React.Component {
     this.Auth.error ="" ;
     this.Auth.isAuth =false ;
     this.setState({});
-    this.Auth.login(data).then(output =>{    
-      console.log(this.state);  
-      //this.setState({});
+    this.Auth.login(data).then(output =>{
+      this.setState({});
       this.checkAuth();
     });
     
     
   }
   renderAlert(){
+    let errorMsg = this.Auth.error+ "" ;
     if (this.Auth. error && this.Auth.error!=""){
-      return (<Alert variant="danger">{this.Auth.error}</Alert>);
+      return (<Alert variant="danger">{errorMsg}</Alert>);
     }
   }
   render() {

@@ -11,7 +11,6 @@ class Auth{
 
     }
     logOut(){
-        console.log(Auth);
         localStorage.removeItem("Token");
         localStorage.removeItem("User" );
         this.user = null;
@@ -26,6 +25,7 @@ class Auth{
 
         localStorage.setItem("Token",data["token"]);
         localStorage.setItem("User",JSON.stringify(data["user"]) );
+        return true;
     }
     login(data){
         return fetch('http://163.172.8.2:8031/token/', {
